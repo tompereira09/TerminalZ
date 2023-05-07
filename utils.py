@@ -15,3 +15,25 @@ def ls(path):
         else:
             print(Fore.GREEN + file + Fore.WHITE)
 
+def cat(path):
+    file = open(path, "r")
+    print("-------------------")
+    print(file.read())
+    print("-------------------")
+
+def list():
+    file = open("commands.txt", "r")
+    print("-------------------")
+    print(file.read())
+    print("-------------------")
+
+def search_command(target, curr):
+    file = open("commands.txt", "r")
+    contents = file.read().split("\n")
+    curr = curr
+    if curr == len(contents):
+        print("Command Not Found.")
+    elif contents[curr] == target:
+        print("Command Found!")
+    else:
+        search_command(target, curr+1)

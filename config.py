@@ -1,6 +1,6 @@
 import json
 
-contents = open("config.json", "r").read()
+contents = open("manifest.json", "r").read()
 
 jc = json.loads(contents)
 

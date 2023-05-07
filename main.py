@@ -22,7 +22,6 @@ while run:
             if inp_list[1] != "..":
                 if len(inp_list) == 2:
                     try:
-                        print("Option 1")
                         dir = inp_list[1]
                         os.chdir(dir)
                         path = os.getcwd()
@@ -41,4 +40,24 @@ while run:
                 os.chdir(back_path.parent.absolute())
                 path = os.getcwd()
         else:
-            print(colorama.Fore.RED + "Error: 'cd' must take an argument." + colorama.Fore.WHITE)
+            print(colorama.Fore.RED + "Error: 'cd' must take one argument." + colorama.Fore.WHITE)
+    elif inp_list[0] == "cat":
+        if len(inp_list) == 2:
+            try:
+                utils.cat(inp_list[1])
+            except Exception as e:
+                print(colorama.Fore.RED + f'Error finding file: {e}' + colorama.Fore.WHITE)
+        else:
+            print(colorama.Fore.RED + "Error: 'cat' must take one argument." + colorama.Fore.WHITE)
+
+    elif curr_inp == "list":
+        utils.list()
+    elif inp_list[0] == "find":
+        if len(inp_list) == 2:
+            try:
+                utils.search_command(inp_list[1], 0)
+            except Exception as e:
+                print(colorama.Fore.RED + f'Error: {e}' + colorama.Fore.WHITE)
+        else:
+            print(colorama.Fore.RED + "Error: 'cat' must take one argument." + colorama.Fore.WHITE)
+
