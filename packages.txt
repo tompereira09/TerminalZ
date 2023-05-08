@@ -2,3 +2,4 @@ ls
 cd
 cat
 list
+find
