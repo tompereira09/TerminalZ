@@ -37,3 +37,5 @@ def search_command(target, curr):
         print("Command Found!")
     else:
         search_command(target, curr+1)
+def clear():
+    os.system('cls')

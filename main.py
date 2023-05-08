@@ -61,3 +61,6 @@ while run:
         else:
             print(colorama.Fore.RED + "Error: 'cat' must take one argument." + colorama.Fore.WHITE)
 
+    elif curr_inp == "clear":
+        utils.clear()
+
